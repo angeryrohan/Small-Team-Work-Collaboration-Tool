@@ -15,6 +15,7 @@ Firebase WebApplication for organisations and communities to handle task assignm
  
  <h2>Installation Steps</h2>
  1. Clone the repository 
+ <br>
 
 ``` 
 git clone https://github.com/rohancl/Deltask
