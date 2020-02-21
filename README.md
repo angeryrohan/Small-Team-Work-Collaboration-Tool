@@ -13,6 +13,13 @@ Firebase WebApplication for organisations and communities to handle task assignm
  <h2>Prerequisites</h2>
  1. firebase installed on PC
  <h2>Installation Steps</h2>
- 1. Clone the repository ```git clone https://github.com/rohancl/Deltask```
- 2. Go to root folder (public), start a local server by typing in: ```firebase serve```
+ 1. Clone the repository 
+ ```
+ git clone https://github.com/rohancl/Deltask
+ ```
+ 2. Go to root folder (public), start a local server by typing in:
+ ```
+ firebase serve
+ ```
+ <br>
  <b>-DONE-</b>
