@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Firebase Auth Project</title>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="logo.svg" style="height: 40px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text" id="logout">Logout</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-create">Assign Task</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="text" id="signup-name" required />
+          <label for="signup-name">Name</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4 style="color:black">Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
+
+  <!-- CREATE GUIDE MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Assign Task To</h4><br />
+      <form id="create-form">
+        
+
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#test1">Employee</a></li>
+        <li class="tab col s3"><a class="active" href="#test2">Department</a></li>
+      </ul>
+    </div>
+    
+    <div id="test1" class="col s12">
+      <p>Coming Soon</p>
+
+    </div>
+    <div id="test2" class="col s12">
+      <br>
+      <div class="input-field">
+        <select>
+          <option value="" disabled selected placeholder="Select Department">Select Dept</option>
+          <option value="1">Technology</option>
+          <option value="2">Hiring & Recruiting</option>
+          <option value="3">Sales</option>
+        </select>
+      </div>
+      <input type="text" class="datepicker" placeholder="Select Deadline">
+      <div class="input-field">
+        <input type="text" id="title" required>
+        <label for="title">Task Title</label>
+      </div>
+      <div class="input-field">
+        <textarea id="content" class="materialize-textarea" required></textarea>
+        <label for="content">Task Content</label>
+      </div>
+      <button class="btn yellow darken-2 z-depth-0">Assign Task</button>
+
+    </div>
+    </div>
+  </div>
+        
+
+        
+      </form>
+    </div>
+  </div>
+  <!-- GUIDE LIST -->
+
+    
+      <div class="row">
+        <center><h1 class="white-text" color="white"> My Tasks</h1></center>
+        <ul class="collapsible z-depth-0 guides" style="border: none;">
+
+        </ul>
+      </div>
+   
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--NOTE: using "http..../7.8.2/firebase" would get us all libraries included in the firebase
+but we don't need that, so we use selected libraires link, that we're specifically gonna use in this 
+webApp: app, auth, firestore -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script> <!--CORE FUNCTIONALITY  "FIREBASE-APP" -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script> <!--CORE FUNCTIONALITY  "FIREBASE-AUTH" -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script> <!--CORE FUNCTIONALITY  "FIREBASE-FIRESTORE" -->
+  <script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBcwUo3q3rXyGaJyTNQHcK64IzA_nDlgFA",
+    authDomain: "deltamite.firebaseapp.com",
+    databaseURL: "https://deltamite.firebaseio.com",
+    projectId: "deltamite",
+    appId: "1:486035015268:web:3ca173b77908c612fe8171",
+    measurementId: "G-Y1B5Q4PGHY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+//setting up the auth and firestore feature
+  const auth = firebase.auth();
+  //firestore ko naam dedo -> db (for ease)
+  const db = firebase.firestore();
+
+  //update firestore settings
+
+
+</script>
+  
+  <script src="auth.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>
