@@ -1,13 +1,9 @@
 # Deltask
 Firebase WebApplication for organisations and communities to handle task assignment in a more systematic way.
 
-<h2>Problem</h2>
+<h2>Overview</h2>
 
-![problem](https://user-images.githubusercontent.com/29266591/74998003-8fe4c080-547d-11ea-9aef-55afdce5b939.png)
-
-<h2>Solution</h2>
-
-![DELTΔSK](https://user-images.githubusercontent.com/29266591/74997973-76437900-547d-11ea-821d-96d77c4f76e3.png)
+![P(1)](https://user-images.githubusercontent.com/29266591/74998839-d4715b80-547f-11ea-960c-ac849bbec082.png)
 
 <h2> A design I have in Mind</h2>
 
