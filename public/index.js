@@ -62,7 +62,7 @@ const setupGuides = (data) => {
 	});
 	guideList.innerHTML =  html;
 } else {
-		guideList.innerHTML = `<h5 class="center-align">Welcome To Deltask, Login to Proceed</h5>`;
+		guideList.innerHTML = `<h5 class="center-align">Login to Proceed further</h5>`;
 }
 }
 

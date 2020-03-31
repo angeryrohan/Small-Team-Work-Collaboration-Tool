@@ -20,18 +20,13 @@ auth.onAuthStateChanged(user => {
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    // .add makes a JS Object and gives it to firebase
-    //firebase processes this object and adds the specfied
-    //data to the database
     db.collection('guides').add({
         title: createForm['title'].value,
         content: createForm['content'].value
     }).then(() => {
-    // close modal and reset values
     const modal = document.querySelector('#modal-create');
     M.Modal.getInstance(modal).close();
     createForm.reset();
-    //catching errors and consoling it clearly.
     }).catch(err => {
         console.log(err.message);
     })
@@ -52,20 +47,7 @@ const email =signupForm['signup-email'].value;
 const password=signupForm['signup-password'].value;
 console.log(email, password);
 
-//SIGN UP THE USER
-//firebase function which does what is says, and gets a credential token
-  auth.createUserWithEmailAndPassword(email, password).then(cred => {
-      return db.collection('users').doc(cred.user.uid).set({
-          name: signupForm['signup-name'].value
-      });
-    
-  }).then(() => {
-    // close the signup modal & reset form
-    const modal = document.querySelector('#modal-signup');
-    M.Modal.getInstance(modal).close();
-    signupForm.reset();
-  });
-});
+
 
 //LOGOUT USER
 const logout = document.querySelector('#logout');
@@ -95,3 +77,18 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.reset();
     })
 })
+
+//SIGN UP THE USER
+//firebase function which does what is says, and gets a credential token
+auth.createUserWithEmailAndPassword(email, password).then(cred => {
+  return db.collection('users').doc(cred.user.uid).set({
+      name: signupForm['signup-name'].value
+  });
+
+}).then(() => {
+// close the signup modal & reset form
+const modal = document.querySelector('#modal-signup');
+M.Modal.getInstance(modal).close();
+signupForm.reset();
+});
+});
