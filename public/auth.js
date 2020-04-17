@@ -16,7 +16,14 @@ auth.onAuthStateChanged(user => {
   }
 });
 
-//create new guides
+
+
+    /*
+mybutton.addEventListener('click', (e) => {
+   console.log(e.target.parentElement.getAttribute('class'));
+});
+*/
+
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -92,3 +99,113 @@ M.Modal.getInstance(modal).close();
 signupForm.reset();
 });
 });
+
+function deleteTask0() {
+  db.collection("guides").get()
+      .then(function(querySnapshot) {
+        let id=0;
+        let docAddress = querySnapshot.docs[id].id;
+        console.log(docAddress);
+        db.collection("guides").doc(docAddress).delete();
+      });
+    }
+  
+    function deleteTask1() {
+      db.collection("guides").get()
+          .then(function(querySnapshot) {
+            let id=1;
+            let docAddress = querySnapshot.docs[id].id;
+            console.log(docAddress);
+            db.collection("guides").doc(docAddress).delete();
+          });
+        }
+        function deleteTask2() {
+          db.collection("guides").get()
+              .then(function(querySnapshot) {
+                let id=2;
+                let docAddress = querySnapshot.docs[id].id;
+                console.log(docAddress);
+                db.collection("guides").doc(docAddress).delete();
+              });
+            }
+            function deleteTask3() {
+              db.collection("guides").get()
+                  .then(function(querySnapshot) {
+                    let id=3;
+                    let docAddress = querySnapshot.docs[id].id;
+                    console.log(docAddress);
+                    db.collection("guides").doc(docAddress).delete();
+                  });
+                }
+                function deleteTask4() {
+                  db.collection("guides").get()
+                      .then(function(querySnapshot) {
+                        let id=4;
+                        let docAddress = querySnapshot.docs[id].id;
+                        console.log(docAddress);
+                        db.collection("guides").doc(docAddress).delete();
+                      });
+                    }
+                    function deleteTask5() {
+                      db.collection("guides").get()
+                          .then(function(querySnapshot) {
+                            let id=5;
+                            let docAddress = querySnapshot.docs[id].id;
+                            console.log(docAddress);
+                            db.collection("guides").doc(docAddress).delete();
+                          });
+                        }
+                        function deleteTask6() {
+                          db.collection("guides").get()
+                              .then(function(querySnapshot) {
+                                let id=6;
+                                let docAddress = querySnapshot.docs[id].id;
+                                console.log(docAddress);
+                                db.collection("guides").doc(docAddress).delete();
+                              });
+                            }
+                            function deleteTask7() {
+                              db.collection("guides").get()
+                                  .then(function(querySnapshot) {
+                                    let id=7;
+                                    let docAddress = querySnapshot.docs[id].id;
+                                    console.log(docAddress);
+                                    db.collection("guides").doc(docAddress).delete();
+                                  });
+                                }
+                                function deleteTask9() {
+                                  db.collection("guides").get()
+                                      .then(function(querySnapshot) {
+                                        let id=9;
+                                        let docAddress = querySnapshot.docs[id].id;
+                                        console.log(docAddress);
+                                        db.collection("guides").doc(docAddress).delete();
+                                      });
+                                    }
+                                    function deleteTask10() {
+                                      db.collection("guides").get()
+                                          .then(function(querySnapshot) {
+                                            let id=10;
+                                            let docAddress = querySnapshot.docs[id].id;
+                                            console.log(docAddress);
+                                            db.collection("guides").doc(docAddress).delete();
+                                          });
+                                        }
+                                        function deleteTask11() {
+                                          db.collection("guides").get()
+                                              .then(function(querySnapshot) {
+                                                let id=11;
+                                                let docAddress = querySnapshot.docs[id].id;
+                                                console.log(docAddress);
+                                                db.collection("guides").doc(docAddress).delete();
+                                              });
+                                            }
+                                            function deleteTask12() {
+                                              db.collection("guides").get()
+                                                  .then(function(querySnapshot) {
+                                                    let id=12;
+                                                    let docAddress = querySnapshot.docs[id].id;
+                                                    console.log(docAddress);
+                                                    db.collection("guides").doc(docAddress).delete();
+                                                  });
+                                                }

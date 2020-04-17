@@ -34,6 +34,7 @@ const setupUI = (user) => {
 const setupGuides = (data) => {
 	if(data.length) {
 	let html= '';
+	let counter=0;
 	data.forEach(doc => { 
 		const guide = doc.data();
 		// we use (`) in js for HTML Templating
@@ -47,7 +48,7 @@ const setupGuides = (data) => {
 		<div class="card-content">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		  <span class="card-title activator grey-text text-darken-4">${guide.title}<i class="material-icons right">more_vert</i></span>
-		  <p><a href="#" class="white black-text btn-small">Enquire</a>
+		  <p><a href="#" id="${counter}" onclick="deleteTask${counter}()" class="white-text red black-text btn-small">Delete</a>
 		  <a href="#" class="waves-effect waves-light btn-small">Submit Task</a>
 		  </p>
 		</div>
@@ -59,10 +60,11 @@ const setupGuides = (data) => {
 </div>
 		`;
 		html += li;
+		counter++;
 	});
 	guideList.innerHTML =  html;
 } else {
-		guideList.innerHTML = `<h5 class="center-align">Login to Proceed further</h5>`;
+		guideList.innerHTML = `<h5 class="center-align">Nothing Here :)</h5>`;
 }
 }
 
@@ -101,3 +103,5 @@ document.addEventListener('DOMContentLoaded', function() {
   $(document).ready(function(){
     $('.tabs').tabs();
   });
+
+  
