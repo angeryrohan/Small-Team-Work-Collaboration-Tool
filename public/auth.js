@@ -202,10 +202,9 @@ function deleteTask0() {
                                             }
                                             function deleteTask12() {
                                               db.collection("guides").get()
-                                                  .then(function(querySnapshot) {
-                                                    let id=12;
-                                                    let docAddress = querySnapshot.docs[id].id;
-                                                    console.log(docAddress);
-                                                    db.collection("guides").doc(docAddress).delete();
+                                              .then(function(querySnapshot) {
+                                                let id=12;
+                                                let docAddress = querySnapshot.docs[id].id;
+                                                console.log(docAddress);
                                                   });
                                                 }
