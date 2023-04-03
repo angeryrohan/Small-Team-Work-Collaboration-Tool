@@ -1,5 +1,5 @@
 # Deltask
-Firebase WebApplication for small teams to collaborate by assigning tasks
+Firebase WebApp Tool for small teams to assign tasks and deadlines to each other, see their own assigned tasks.
 
 <h2>Overview</h2>
 
