@@ -1,5 +1,5 @@
 # Deltask
-Firebase WebApplication for organisations and communities to handle task assignment in a more systematic way.
+Firebase WebApplication for small teams to collaborate by assigning tasks
 
 <h2>Overview</h2>
 
